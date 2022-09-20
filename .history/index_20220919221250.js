@@ -3,11 +3,6 @@ import express from 'express'
 
 const app = express()
 
-
-app.get("/", (req, res) => {
-  res.send("Express on Vercel");
-});
-
 const getCountries = async currencyCode => {
   try {
     const response = await axios.get(
@@ -28,13 +23,13 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
 }
 
 app.get('/', async (req, res) => {
-  if (fromCurrency || !toCurrency || !amount) {
-    res.send('Please provider all the requiered parameters')
-  } else {
-    const message = await convertCurrency(fromCurrency, toCurrency, amount)
+if(fromCurrency || !toCurrency || !amount){
+  res.send('Please provider all the requiered parameters')
+}
 
-    res.json(message)
-  }
+  const message = await convertCurrency(fromCurrency, toCurrency, amount)
+
+  res.json(message)
 })
 
 app.listen(5000, () => {
