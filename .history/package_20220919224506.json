@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
+  "engines": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
