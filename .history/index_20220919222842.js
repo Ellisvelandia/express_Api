@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
   }
 })
 
-app.listen((process.env.PORT), () => {
+app.listen((pro), () => {
   console.log('server is listening on port 5000')
 })
 
